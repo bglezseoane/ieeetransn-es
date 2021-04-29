@@ -1,7 +1,7 @@
 IEEEtransSN Spanish customization
 =================================
 
-**Warning: Personally, for new projects I would recommend using BibTeX and [BabelBib](https://github.com/TeX-Live/babelbib) and leaving aside the approach offered by this file. I fixed this configuration to be able to work on a project template that uses Polyglossia and had a large number of options configured, so migrating all the configuration would have involved a much greater effort than adjusting this file.**
+**Warning: personally, for new projects I would recommend using BibTeX and [BabelBib](https://github.com/TeX-Live/babelbib) and leaving aside the approach offered by this file. I fixed this configuration to be able to work on a project template that uses Polyglossia and had a large number of options configured, so migrating all the configuration would have involved a much greater effort than adjusting this file.**
 
 This repository contains a file which adapts the Michael Shell's [IEEEtransSN](https://www.ctan.org/pkg/ieeetran) BibTeX bibliographic style to the Spanish orthography.
 
