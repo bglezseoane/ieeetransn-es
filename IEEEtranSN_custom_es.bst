@@ -2,7 +2,7 @@
 %% BibTeX Bibliography Style file
 %% Sorting Natbib version of IEEEtran.bst, adapted to Spanish
 %% *** Not for normal IEEE work ***
-%% Version 1 of the adaptation (2021/04/29)
+%% Version 1.1 of the adaptation (11/05/2021)
 %% 
 %% Copyright (c) 2021 Borja González Seoane
 %% 
@@ -228,7 +228,7 @@ FUNCTION {bbl.page}{ "p." }
 FUNCTION {bbl.chapter}{ "cap." }
 FUNCTION {bbl.paper}{ "artículo" }
 FUNCTION {bbl.part}{ "pt." }
-FUNCTION {bbl.patent}{ "Patente" }
+FUNCTION {bbl.patent}{ "patente" }
 FUNCTION {bbl.patentUS}{ "U.S." }
 FUNCTION {bbl.revision}{ "Rev." }
 FUNCTION {bbl.series}{ "ser." }
@@ -1883,20 +1883,16 @@ FUNCTION {format.patent.date}
 FUNCTION {format.patent.nationality.type.number}
 { this.to.prev.status
   this.status.std
-  nationality duplicate$ empty$
-    { "nationality" bibinfo.warn pop$ "" }
-    { "nationality" bibinfo.check
-      duplicate$ "l" change.case$ "united states" =
-        { pop$ bbl.patentUS }
-        { skip$ }
-      if$
-      " " *
-    }
-  if$
   type empty$
     { bbl.patent "type" bibinfo.check }
     { type "type" bibinfo.check }
-  if$  
+  if$ 
+  nationality duplicate$ empty$
+    { "nationality" bibinfo.warn pop$ "" }
+    { "nationality" bibinfo.check 
+      " de " swap$ *
+    }
+  if$ 
   *
   number duplicate$ empty$
     { "number" bibinfo.warn pop$ }
